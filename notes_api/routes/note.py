@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, Response
 
 from notes_api.models.note import Note
 
-router = APIRouter(prefix="/notes", tags=["Note"])
+router = APIRouter(prefix="/api/notes", tags=["Note"])
 
 
 @router.get("")
@@ -25,6 +25,8 @@ async def fetch_one_note(id: str):
 @router.put("/{id}", response_model=Note)
 async def update_note(id: str, data: dict):
     note = await Note.get(id)
+    if data.get("_id"):
+        del data["_id"]
     await note.set(data)
     return note
 

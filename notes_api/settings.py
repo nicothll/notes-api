@@ -6,7 +6,7 @@ load_dotenv()
 
 
 class Settings(BaseModel):
-    mongo_uri = os.getenv("MONGODB_URI")
+    mongo_uri = os.getenv("MONGODB_LOCAL")
 
 
 CONFIG = Settings()
