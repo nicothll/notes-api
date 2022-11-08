@@ -1,5 +1,5 @@
-from notes_api.app import app
-from notes_api.routes.note import router as NoteRouter
+from .app import app
+from .routes.note import router as NoteRouter
 
 
 @app.get("/", tags=["Root"])

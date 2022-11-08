@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, Response
 
-from notes_api.models.note import Note
+from ..models.note import Note
 
 router = APIRouter(prefix="/api/notes", tags=["Note"])
 
